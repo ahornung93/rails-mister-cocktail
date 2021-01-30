@@ -21,6 +21,14 @@
     <div class="card-body">
       <h5 class="card-title"><%= @cocktail.name %></h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">Ingredients</h5>
+      <ul class="list-group">
+        <% @cocktail.doses.each do |dose| %>
+          <li class="list-group-item d-flex justify-content-between"><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "Remove", dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <% end %>
+      </ul>
+      <br>
+      <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
     </div>
   </div>
   <img src="https://source.unsplash.com/collection/96656859/1600x900" style="width: 32rem;">
