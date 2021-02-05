@@ -1,5 +1,5 @@
 <%= simple_form_for [ cocktail, dose ] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
+  <%= f.input :description, placeholder: "e.g.  a tipple of...", error: "Please enter a description" %>
+  <%= f.association :ingredient, error: 'Please choose an ingredient'%>
   <%= f.submit "Add Ingredient", class: "btn btn-primary" %>
 <% end %>

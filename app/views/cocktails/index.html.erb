@@ -20,17 +20,16 @@
   </div>
 </nav>
 
-<div class="d-flex m-3">
+<div class="d-flex flex-wrap m-3" id="mural">
   <% @cocktails.each do |cocktail| %>
-    <div class="card m-3" style="width: 18rem;">
+    <div id="small-card" class="card m-3" style="width: 18rem;">
       <% if cocktail.image.attached? %>
-        <%= cl_image_tag cocktail.image.key, crop: :fill %>
+        <%= cl_image_tag cocktail.image.key, crop: :fill, class: 'card-img' %>
       <% else %>
-        <%= image_tag 'cocktails_1.jpeg', crop: :fill %>
+        <%= image_tag 'cocktails_1.jpeg', crop: :fill, class: 'card-img' %>
       <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= cocktail.name %></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <%= link_to 'See details', cocktail_path(cocktail), class: "btn btn-primary" %>
       </div>
     </div>
