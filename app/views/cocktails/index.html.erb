@@ -34,4 +34,11 @@
       </div>
     </div>
   <% end %>
+   <div id="small-card" class="card m-3" style="width: 18rem;">
+        <%= image_tag 'cocktails_1.jpeg', crop: :fill, class: 'card-img' %>
+      <div class="card-body">
+        <h5 class="card-title">Mix your own</h5>
+        <%= link_to 'Create Cocktail', new_cocktail_path, class: "btn btn-success" %>
+      </div>
+    </div>
 </div>
